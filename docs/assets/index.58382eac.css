@@ -1,0 +1,1 @@
+.x-aspect{position:relative}.x-aspect:after{content:"";display:inline-block;padding-bottom:calc(var(--aspect-h) / var(--aspect-w) * 100%)}.x-aspect__inner{position:absolute;left:0;right:0;top:0;bottom:0}.x-aspect__inner>*{width:100%;height:100%}
