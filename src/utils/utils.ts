@@ -79,3 +79,30 @@ export const getScrollContainer = (el: HTMLElement, isHorizontal?: boolean): Win
 
   return parent;
 };
+
+/**
+ * 判断元素是否显示在容器元素内
+ * @param el 元素
+ * @param container 容器元素
+ * @returns 元素是否显示在容器元素内
+ */
+export const isViewInContainer = (el: Element, container?: Element | Window): boolean => {
+  const { top, right, bottom, left } = el.getBoundingClientRect();
+
+  let containerRect: Pick<DOMRect, 'top' | 'bottom' | 'left' | 'right'>;
+
+  if (container instanceof Element) {
+    containerRect = container.getBoundingClientRect();
+  } else {
+    containerRect = {
+      top: 0,
+      bottom: window.innerHeight,
+      left: 0,
+      right: window.innerWidth,
+    };
+  }
+
+  return (
+    top < containerRect.bottom && bottom > containerRect.top && right > containerRect.left && left < containerRect.right
+  );
+};
