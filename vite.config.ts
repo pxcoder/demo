@@ -1,33 +1,32 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import importCDN from 'vite-plugin-cdn-import';
+// import styleImport, { ElementPlusResolve } from 'vite-plugin-style-import';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    importCDN({
-      modules: [
-        {
-          name: 'vue',
-          var: 'Vue',
-          path: '//unpkg.com/vue@3.2.25/dist/vue.global.prod.js',
-        },
-        {
-          name: 'element-plus',
-          var: 'ElementPlus',
-          path: '//unpkg.com/element-plus@2.0.2/dist/index.full.min.js',
-        },
-      ],
-    }),
-  ],
-  base: process.env.NODE_ENV === 'production' ? '/demo/' : '/',
-  resolve: {
-    alias: {
-      '@': '/src',
+export default defineConfig(({ mode }) => {
+  console.log({ mode });
+
+  return {
+    plugins: [
+      vue(),
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+    base: mode === 'production' ? '/demo/' : '/',
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
     },
-  },
-  build: {
-    outDir: './docs',
-  },
+    build: {
+      outDir: './docs',
+    },
+  };
 });

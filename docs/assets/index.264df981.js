@@ -1,1 +1,0 @@
-import{s as t}from"./utils.d6b00222.js";const o={class:"min-h-screen pt-24"},p=Vue.defineComponent({setup(n){return t("404"),(u,s)=>{const e=Vue.resolveComponent("el-empty");return Vue.openBlock(),Vue.createElementBlock("div",o,[Vue.createVNode(e,{description:"\u60A8\u8BBF\u95EE\u7684\u9875\u9762\u4E0D\u5B58\u5728"})])}}});export{p as default};
