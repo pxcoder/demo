@@ -14,7 +14,10 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { setHtmlTitle } from '@/utils/utils';
+setHtmlTitle('拟态风格按钮');
+</script>
 <style lang="css">
 .wrapper {
   height: 100vh;
