@@ -19,7 +19,8 @@ export default defineConfig(({ mode }) => {
         resolvers: [ElementPlusResolver()],
       }),
     ],
-    base: mode === 'production' ? '/demo/' : '/',
+    // base: mode === 'production' ? '/demo/' : '/',
+    base: '/demo/',
     resolve: {
       alias: {
         '@': '/src',
