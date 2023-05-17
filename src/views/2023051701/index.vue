@@ -5,6 +5,10 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { setHtmlTitle } from '@/utils/utils';
+setHtmlTitle('流动的边框');
+</script>
 <style lang="scss">
 .wrapper {
   height: 100vh;

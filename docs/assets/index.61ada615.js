@@ -1,1 +1,0 @@
-import{_ as s}from"./index.07e7a675.js";import{m as t,o as _,p as e}from"./vendor.77e47538.js";const a={},c={class:"wrapper"},r=e("div",{class:"card"},[e("span",{class:"card-text"},"CSS")],-1),o=[r];function n(d,i){return _(),t("div",c,o)}var f=s(a,[["render",n]]);export{f as default};

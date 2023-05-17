@@ -1,0 +1,1 @@
+import{s}from"./utils.d6b00222.js";import{l as t,m as a,o,p as e}from"./vendor.77e47538.js";const _={class:"wrapper"},c=e("div",{class:"card"},[e("span",{class:"card-text"},"CSS")],-1),r=[c],u=t({setup(n){return s("\u6D41\u52A8\u7684\u8FB9\u6846"),(p,d)=>(o(),a("div",_,r))}});export{u as default};
